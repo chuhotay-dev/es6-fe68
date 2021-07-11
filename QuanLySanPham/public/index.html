@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Title</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div id="root">
+    <div class="card text-white bg-dark">
+      <div class="card-body">
+        <h4 class="card-title">Danh sách sản phẩm</h4>
+        <div class='container'>
+          <div class="row">
+            <div class="col-md-3">
+              <input id="maSP" class="form-control" placeholder="Mã SP" disabled />
+            </div>
+            <div class="col-md-3">
+              <input id="tenSP" class="form-control" placeholder="Tên SP" />
+            </div>
+            <div class="col-md-3">
+              <input id="gia" class="form-control" placeholder="Giá" />
+            </div>
+            <div class="col-md-3">
+              <input id="hinhAnh" class="form-control" placeholder="Link hình" />
+            </div>
+          </div>
+          <br />
+          <button id="btnThem" class="btn btn-success">Thêm sản phẩm</button>
+          <button id="btnCapNhat" class="btn btn-success">Cap nhat</button>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Mã SP</th>
+            <th>Tên SP</th>
+            <th>Giá </th>
+            <th>Hình ảnh</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="tblDanhSachSanPham">
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="../node_modules/popper.js/dist/umd/popper.min.js"></script>
+  <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="../node_modules/axios/dist/axios.min.js"></script>
+
+  <script src="../src/index.js"></script>
+</body>
+
+</html>
