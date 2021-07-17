@@ -272,3 +272,183 @@
 // }
 
 // calcSum(1, 2, 3);
+
+/**
+ * Spread operator
+ * - Copy Array
+ * - Copy Object
+ * - Tham trị (các kiểu dữ liệu nguyên thuỷ) .vs tham chiếu (array, object)
+ * - Merge array
+ * - Thêm phần tử vào mảng
+ * - Sử dụng array nhu danh sách các tham số của func
+ */
+
+// const people = ['Tay', 'Y', 'Vy'];
+// console.log(people[0], people[1], people[2]);
+// console.log(...people);
+// console.log('Tay', 'Y', 'Vy');
+
+// Copy array
+// let nums1 = [1, 2, 3];
+// let nums2 = nums1;
+
+// nums2.push(4);
+// console.log(nums2);
+// console.log(nums1);
+
+// let nums1 = [1, 2, 3];
+// let nums2 = JSON.parse(JSON.stringify(nums1));
+
+// nums2.push(4);
+
+// console.log(nums1);
+// console.log(nums2);
+
+// const nums1 = [1, 2, 3];
+// const nums2 = [1, ...nums1, 4, 5, 6];
+// nums2.push(4);
+// console.log(nums1);
+// console.log(nums2);
+
+// Merge Array
+// const nums1 = [1, 2, 3];
+// const nums2 = [4, 5, 6];
+
+// const nums3 = nums1.concat(nums2);
+// console.log(nums3);
+
+// const nums3 = [...nums1, ...nums2];
+// console.log(nums3);
+
+// Copy object
+// let obj1 = {
+//     a: 'a',
+//     b: 'b'
+// }
+
+// let obj2 = { ...obj1, d: 'd', a: '_a' };
+// obj2.c = 'c';
+
+// console.log(obj1);
+// console.log(obj2);
+
+// Merge object
+
+// const obj1 = {
+//     a: 'a',
+//     b: 'b'
+// }
+
+// const obj2 = {
+//     c: 'c',
+//     d: 'd'
+// }
+
+// const obj3 = Object.assign(obj1, obj2);
+// const obj3 = {...obj1, ...obj2};
+// console.log(obj3);
+
+// const users = ['Tay', 'Y', 'Vy'];
+
+// const showUsers = (user1, user2, user3) => console.log(user1, user2, user3);
+// const showUsers = (...users) => {
+//     users.forEach(user => {
+//         console.log(user)
+//     })
+// }
+
+// showUsers(users[0], users[1], users[2]);
+// showUsers(...users);
+
+/**
+ * Module
+ * - import
+ * - export
+ */
+
+// import SinhVienDefault, { getLocalStorage, setLocalStorage } from './utils.js';
+// import * as utils from './utils';
+// import SinhVienDefault from './utils.js';
+
+// const sinhVien = new SinhVienDefault('Chu Ho Tay', 'FE68');
+// console.log(sinhVien);
+
+// getLocalStorage();
+// setLocalStorage();
+
+/**
+ * Class: bản chất vẫn là 1 func
+ */
+
+// expression
+// const People = class {
+
+// }
+
+// declaration
+// class People {
+//     constructor(fullName, className, birthYear) {
+//         this.fullName = fullName;
+//         this.className = className;
+//         this.birthYear = birthYear;
+//     }
+
+//     calcAge() {
+//         console.log(2021 - this.birthYear);
+//     }
+// }
+
+class ChuyenXe {
+    constructor(soXe, mauXe, taiXe) {
+        this.soXe = soXe;
+        this.mauXe = mauXe;
+        this.taiXe = taiXe;
+    }
+
+    tinhDoanhThu() {
+        console.log('Tinh doanh thu chung');
+    }
+}
+
+// extends: Kế thừa thuộc tính và phương thức của lớp cha 
+class ChuyenXeNoiThanh extends ChuyenXe {
+    constructor(soXe, mauXe, taiXe, soTuyen) {
+        // super: gọi lại phương thức constructor của lớp cha (ChuyenXe)
+        super(soXe, mauXe, taiXe);
+        this.soTuyen = soTuyen;
+    }
+    
+    // Ghi đè phương thức của lớp cha (tính đa hình)
+    tinhDoanhThu() {
+        console.log('Tinh doanh thu chuyen xe NT');
+    }
+
+    timTuyenXeGanNhat() {
+        console.log('Tim tuyen xe gan nhat');
+    }
+}
+
+const chuyenXeNT = new ChuyenXeNoiThanh();
+chuyenXeNT.tinhDoanhThu();
+class ChuyenXeNgoaiThanh extends ChuyenXe {
+    constructor(soXe, mauXe, taiXe, soNgayDi) {
+        // super: gọi lại phương thức constructor của lớp cha (ChuyenXe)
+        super(soXe, mauXe, taiXe);
+        this.soNgayDi = soNgayDi;
+    }
+    
+    tinhDoanhThu() {
+        console.log('Tinh doanh thu chuyen xe noi thanh!')
+    }
+
+    tinhSoNgayDiDuoc() {
+        console.log('Tinh so ngay di duoc');
+    }
+}
+
+
+
+// const tay = new People('Chu Ho Tay', 'FE68', 2000);
+// console.log(tay);
+
+// console.log(tay.__proto__ === People.prototype);
